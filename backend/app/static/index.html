@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UPUP Review Assistant Demo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">UPUP public demo</p>
+          <h1>最小可运行复盘助手 Demo</h1>
+          <p class="lead">
+            使用完全人工合成 sample data，运行一次 mock 复盘，查看 toy score
+            与 demo summary。
+          </p>
+          <div class="actions">
+            <button id="run-review" type="button">运行 Mock 复盘</button>
+            <a href="https://upup.live/register?invite=INV-0E08A" target="_blank" rel="noreferrer">访问完整产品</a>
+          </div>
+        </div>
+        <aside class="notice">
+          <strong>Demo only</strong>
+          <span>数据、分数、摘要均为演示用途，不构成投资建议。</span>
+        </aside>
+      </section>
+
+      <section class="layout">
+        <div>
+          <div class="section-title">
+            <h2>Sample Data</h2>
+            <span id="market-count">Loading...</span>
+          </div>
+          <div id="market-list" class="grid"></div>
+        </div>
+
+        <div>
+          <div class="section-title">
+            <h2>Mock Review</h2>
+            <span id="review-status">Ready</span>
+          </div>
+          <div id="report" class="report empty">
+            点击按钮运行一次本地 mock 复盘。
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
