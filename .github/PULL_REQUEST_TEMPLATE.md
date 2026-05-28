@@ -1,10 +1,12 @@
 ## Summary
 
-Describe the public demo change.
+Describe the community scaffold change.
 
 ## Checklist
 
-- [ ] I used synthetic data only.
-- [ ] I did not add production scoring logic.
-- [ ] I ran `python -m pytest` in the backend directory.
-- [ ] I verified `docker compose up --build`.
+- [ ] Synthetic data only.
+- [ ] No production scoring logic.
+- [ ] No real external data integration.
+- [ ] `cd backend && python -m pytest`
+- [ ] `cd frontend && npm run build`
+- [ ] `docker compose up --build`

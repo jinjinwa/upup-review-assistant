@@ -1,18 +1,28 @@
 # Contributing
 
-Thank you for your interest in the UPUP Review Assistant Demo.
+Contributions are welcome when they improve the community scaffold.
 
 ## Scope
 
-Contributions should improve the public demo experience, documentation, tests, or local setup. Keep all examples synthetic.
+Accepted:
 
-## Before Opening a Pull Request
+- Developer experience improvements.
+- Auth, role, database, task, or frontend scaffold improvements.
+- Synthetic demo pages and docs.
+- Tests and local setup fixes.
 
-- Run `python -m pytest` in the backend directory.
-- Run `docker compose up --build` from the repository root.
-- Confirm the demo opens at `http://localhost:8080`.
-- Confirm no private credentials or real data are included.
+Out of scope:
 
-## Demo Boundary
+- Real market data integrations.
+- Production scoring factors or strategies.
+- Backtest engines.
+- Membership, payment, card key, or commercial permission flows.
+- Production infrastructure details.
 
-Please do not add real market data, production scoring logic, production deployment details, user systems, payment systems, or admin features.
+## Checks
+
+```bash
+cd backend && python -m pytest
+cd frontend && npm run build
+docker compose up --build
+```

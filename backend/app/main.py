@@ -1,62 +1,54 @@
-from __future__ import annotations
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from sqlalchemy.exc import SQLAlchemyError
 
-from pathlib import Path
+from app.api import admin, auth, demo, scoring
+from app.core.exceptions import APIException
+from app.core.response import error_response, success_response
 
-from fastapi import FastAPI
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+app = FastAPI(title="UPUP Community Edition API", version="0.2.0")
 
-from .demo_data import get_market_snapshot
-from .demo_scoring import get_latest_report
-from .demo_tasks import get_task, submit_review_task
-
-APP_DIR = Path(__file__).resolve().parent
-STATIC_DIR = APP_DIR / "static"
-
-app = FastAPI(
-    title="UPUP Review Assistant Demo",
-    version="0.1.0",
-    description="Minimal runnable demo with synthetic data and toy scoring.",
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:18080", "http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
-class ReviewRequest(BaseModel):
-    selected_codes: list[str] = Field(default_factory=list)
+@app.exception_handler(APIException)
+async def api_exception_handler(_: Request, exc: APIException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=error_response(message=exc.message, code=exc.status_code, detail=exc.detail),
+    )
 
 
-@app.get("/")
-def index():
-    return FileResponse(STATIC_DIR / "index.html")
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(_: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=422,
+        content=error_response(message="Validation error", code=422, detail=exc.errors()),
+    )
 
 
-@app.get("/health")
+@app.exception_handler(SQLAlchemyError)
+async def database_exception_handler(_: Request, exc: SQLAlchemyError):
+    return JSONResponse(
+        status_code=500,
+        content=error_response(message="Database error", code=500, detail={"type": exc.__class__.__name__}),
+    )
+
+
+@app.get("/api/health")
 def health():
-    return {"status": "ok", "demo": True}
+    return success_response({"status": "ok", "service": "community-api"})
 
 
-@app.get("/api/demo/market")
-def demo_market():
-    return get_market_snapshot()
-
-
-@app.post("/api/demo/review")
-def demo_review(payload: ReviewRequest | None = None):
-    selected_codes = payload.selected_codes if payload else []
-    return submit_review_task(selected_codes)
-
-
-@app.get("/api/demo/report")
-def demo_report():
-    return get_latest_report()
-
-
-@app.get("/api/demo/tasks/{task_id}")
-def demo_task(task_id: str):
-    task = get_task(task_id)
-    if task is None:
-        return {"task_id": task_id, "status": "missing"}
-    return task
-
-
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+app.include_router(auth.router)
+app.include_router(demo.router)
+app.include_router(scoring.router)
+app.include_router(admin.router)

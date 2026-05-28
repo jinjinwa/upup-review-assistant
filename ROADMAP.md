@@ -1,20 +1,13 @@
 # Roadmap
 
-This roadmap covers the public demo only.
+## Community Edition
 
-## Near Term
-
-- Improve the static demo page interactions.
-- Add more synthetic scenarios.
-- Add lightweight accessibility checks.
-- Expand developer documentation.
-
-## Later
-
-- Add optional mock task progress visualization.
-- Add exportable demo reports.
-- Add more test coverage around synthetic scoring.
+- Add more synthetic data governance scenarios.
+- Add frontend smoke tests.
+- Add optional Flower profile for task inspection.
+- Improve API examples and OpenAPI documentation.
+- Add more N+1-safe query examples.
 
 ## Commercial Product
 
-The complete product roadmap is separate from this public demo. Visit [https://upup.live/](https://upup.live/) for product access.
+The commercial product roadmap is separate. Visit [https://upup.live/](https://upup.live/) for product access.

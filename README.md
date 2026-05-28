@@ -1,10 +1,10 @@
-# UPUP Review Assistant Demo
+# UPUP Review Assistant Community Edition
 
-Runnable minimal demo for an A-share review assistant concept.
+Open-core community scaffold for the UPUP A-share review assistant.
 
-This repository is a public open-source demo, not the complete UPUP product. It contains only synthetic sample data, a toy scoring routine, and a small FastAPI web page that can run locally.
+This repository is intentionally **not** the full commercial product. It is a runnable architecture scaffold with frontend, backend, PostgreSQL, Redis, Celery, Alembic, authentication, roles, and mock data governance.
 
-## Try It
+## Quickstart
 
 ```bash
 docker compose up --build
@@ -13,25 +13,50 @@ docker compose up --build
 Open:
 
 ```text
-http://localhost:8080
+http://localhost:18080
 ```
 
-The page loads synthetic demo entries, runs one mock review, and displays a toy score with a short demo summary.
+Default accounts:
 
-## What Is Included
+```text
+admin@example.com / admin123456
+demo@example.com / demo123456
+```
 
-- A FastAPI backend.
-- A static demo page.
-- Fully artificial sample data.
-- Toy scoring based on demo-only fields such as tag count, activity level, and demo volatility.
-- Documentation for the public demo boundary.
+## What You Can Run
 
-## What Is Not Included
+- Register and log in.
+- Use JWT-protected frontend routes.
+- Switch behavior by normal user vs admin role.
+- Create fake review reports.
+- Run a generic toy scorer.
+- View admin user management with an N+1-safe aggregate query.
+- Trigger a mock data source sync through Celery + Redis.
+- Inspect SQLAlchemy models and Alembic migration.
 
-- The complete commercial product.
-- Production scoring logic.
-- Real market data, real securities data, or historical returns.
-- User systems, subscriptions, payments, admin features, or production deployment assets.
+## Isolation From the Private App
+
+The community edition is isolated from the private app. It uses its own Compose project, network, volume, and host ports:
+
+```text
+project:  upup-open-source
+frontend: http://localhost:18080
+backend:  http://localhost:18000
+postgres: localhost:15432
+redis:    localhost:16379
+```
+
+It must not stop, reuse, or depend on the private app services.
+
+## What Is Removed
+
+- Production stock pool algorithms.
+- Real scoring factors and weights.
+- Backtest logic and portfolio logic.
+- Real market data integrations.
+- Tushare implementation, tokens, field mapping, or sync scripts.
+- Commercial membership, payment, card key, and admin business flows.
+- Production deployment and infrastructure topology.
 
 ## Commercial Product
 
@@ -41,15 +66,19 @@ Start here: [https://upup.live/register?invite=INV-0E08A](https://upup.live/regi
 
 Business contact: 1419995247@qq.com
 
-## Important Notice
+## Notice
 
-The sample data in this repository is completely artificial. The toy scoring routine is only for demonstrating a local workflow. This repository does not provide investment advice.
+All demo data is synthetic. The generic scorer is a technical scaffold, not a production investment model. Nothing in this repository constitutes investment advice.
 
 ## Documentation
 
 - [Quickstart](docs/quickstart.md)
+- [Development Guide](docs/development.md)
 - [Architecture](docs/architecture.md)
+- [Auth and Roles](docs/auth-and-roles.md)
+- [Data Governance](docs/data-governance.md)
 - [Task Architecture](docs/task-architecture.md)
+- [Scoring Framework](docs/scoring-framework.md)
 - [Open-Core Boundary](docs/open-core-boundary.md)
 - [Demo Data](docs/demo-data.md)
 
