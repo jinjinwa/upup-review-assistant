@@ -1,9 +1,9 @@
 # Disclaimer
 
-This repository is a minimal runnable demo for local evaluation.
+This repository is a community edition architecture scaffold.
 
-All entries, labels, activity values, volatility values, and summaries are artificial. They are not derived from real market data, real user data, historical data, or commercial review output.
+All demo data, reports, data sources, task messages, and score dimensions are synthetic. They are not derived from real securities, real market data, customer data, commercial output, or historical returns.
 
-The scoring routine is intentionally simple and demo-only. It is not a production algorithm and must not be used to make financial decisions.
+The generic scorer demonstrates how a scoring service can be structured. It is not a production stock model and must not be used to make financial decisions.
 
 Nothing in this repository constitutes investment advice.

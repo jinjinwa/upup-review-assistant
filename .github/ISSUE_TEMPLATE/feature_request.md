@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an improvement for the public demo
+about: Suggest an improvement for the community scaffold
 title: ""
 labels: enhancement
 assignees: ""
@@ -8,8 +8,6 @@ assignees: ""
 
 ## Proposal
 
-Describe the demo improvement.
+## Open-Core Scope Check
 
-## Scope Check
-
-Confirm the proposal uses synthetic data only and stays within the public demo boundary.
+Confirm this uses synthetic data only and does not expose commercial strategy logic.

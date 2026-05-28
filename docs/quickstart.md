@@ -1,27 +1,25 @@
 # Quickstart
 
-## Requirements
-
-- Docker
-- Docker Compose
-
-## Run Locally
-
 ```bash
 docker compose up --build
 ```
 
-Open:
+Open `http://localhost:18080`.
+
+Default accounts:
 
 ```text
-http://localhost:8080
+admin@example.com / admin123456
+demo@example.com / demo123456
 ```
 
-## Test the Backend
+Useful endpoints:
 
-```bash
-cd backend
-python -m pytest
+```text
+GET  /api/health
+POST /api/auth/login
+GET  /api/auth/me
+POST /api/demo/reviews
+GET  /api/admin/data-sources
+POST /api/admin/data-sources/{id}/sync
 ```
-
-The demo uses only synthetic entries and toy scoring.

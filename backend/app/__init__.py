@@ -1,1 +1,1 @@
-"""Minimal public demo package."""
+"""UPUP community edition backend."""

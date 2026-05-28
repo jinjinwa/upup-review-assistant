@@ -1,62 +1,71 @@
 # Architecture
 
-This document describes the minimal public demo only.
-
 ## System Context
 
 ```mermaid
 flowchart LR
-  U["Local user"] --> W["Demo web page"]
-  W --> A["FastAPI demo service"]
-  A --> D["Synthetic sample data"]
-  A --> S["Toy scoring"]
-  W --> C["UPUP commercial CTA"]
+  User["Community user"] --> Frontend["React app"]
+  Frontend --> API["FastAPI backend"]
+  API --> DB["PostgreSQL"]
+  API --> Redis["Redis"]
+  Worker["Celery worker"] --> Redis
+  Worker --> DB
+  Frontend --> CTA["upup.live"]
 ```
 
-## Demo Container
+## Docker Compose
 
 ```mermaid
 flowchart TB
-  B["Browser on localhost:8080"] --> C["Docker Compose service"]
-  C --> F["FastAPI app"]
-  F --> H["Static files"]
-  F --> M["Demo API routes"]
-  M --> D["In-memory synthetic data"]
-  M --> R["Toy review routine"]
+  Browser["localhost:18080"] --> Nginx["frontend nginx"]
+  Nginx --> Backend["backend:8000"]
+  Backend --> Postgres["db:5432"]
+  Backend --> Redis["redis:6379"]
+  Worker["celery-worker"] --> Redis
+  Worker --> Postgres
 ```
 
-## Local Request Sequence
+## Login Sequence
 
 ```mermaid
 sequenceDiagram
-  participant User
-  participant Page as Static Page
-  participant API as Demo API
-  participant Data as Synthetic Data
-  participant Score as Toy Scoring
-  User->>Page: Open localhost:8080
-  Page->>API: GET /api/demo/market
-  API->>Data: Read demo entries
-  Data-->>API: Synthetic list
-  API-->>Page: Market payload
-  User->>Page: Run mock review
-  Page->>API: POST /api/demo/review
-  API->>Score: Score synthetic entries
-  Score-->>API: Toy report
-  API-->>Page: Demo summary
+  participant U as User
+  participant F as Frontend
+  participant A as API
+  participant D as DB
+  U->>F: Submit credentials
+  F->>A: POST /api/auth/login
+  A->>D: Find user
+  D-->>A: User row
+  A-->>F: JWT + user role
+  F->>A: GET /api/auth/me
+  A-->>F: Current user
 ```
 
-## Sample Data Flow
+## Admin Data Governance
 
 ```mermaid
-flowchart LR
-  A["Handwritten sample entries"] --> B["Demo API"]
-  B --> C["Static page"]
-  B --> D["Toy review routine"]
-  D --> E["Demo report"]
-  E --> C
+sequenceDiagram
+  participant Admin
+  participant API
+  participant DB
+  participant Redis
+  participant Worker
+  Admin->>API: POST /api/admin/data-sources/{id}/sync
+  API->>DB: Create integration run
+  API->>Redis: Enqueue mock sync
+  Worker->>Redis: Consume task
+  Worker->>DB: Update run status
+  Admin->>API: GET /api/admin/tasks
 ```
 
-## Notes
+## Community Database
 
-No real market feed, production scoring, user account system, payment system, or production deployment topology is included.
+```mermaid
+erDiagram
+  USERS ||--o{ DEMO_REPORTS : owns
+  DATA_SOURCES ||--o{ INTEGRATION_RUNS : creates
+  USERS ||--o{ AUDIT_LOGS : acts
+```
+
+This is a public scaffold schema, not the commercial schema.
