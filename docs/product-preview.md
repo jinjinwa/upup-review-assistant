@@ -2,7 +2,7 @@
 
 These screenshots are masked product previews from the hosted UPUP experience. They are included so community users can understand the direction of the full product UI.
 
-The open-source repository remains an architecture scaffold. It does not include commercial strategy logic, real scoring factors, production data integrations, or investment advice.
+The community edition focuses on a runnable local scaffold: app shell, API contracts, authentication, admin workflows, task processing, and synthetic demo data.
 
 ## Review Dashboard
 
