@@ -4,14 +4,16 @@ These screenshots show the community edition running locally with synthetic demo
 
 The community edition focuses on a runnable local scaffold: app shell, API contracts, authentication, admin workflows, task processing, and synthetic demo data.
 
+Use the invite link to experience the deployed product with hosted permissions: [https://upup.live/register?invite=INV-0E08A](https://upup.live/register?invite=INV-0E08A)
+
 ## Community Dashboard
 
-![UPUP community dashboard](assets/screenshots/community-dashboard.png)
+![Stock Quant community dashboard](assets/screenshots/community-dashboard.png)
 
 ## Demo Review
 
-![UPUP demo review](assets/screenshots/community-review.png)
+![Stock Quant demo review](assets/screenshots/community-review.png)
 
 ## Admin Data Governance
 
-![UPUP admin data governance](assets/screenshots/community-admin-data.png)
+![Stock Quant admin data governance](assets/screenshots/community-admin-data.png)

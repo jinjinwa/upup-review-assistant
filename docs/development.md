@@ -10,7 +10,7 @@ bash scripts/dev-fullstack.sh
 bash scripts/prod-start.sh
 ```
 
-All scripts set `COMPOSE_PROJECT_NAME=upup-open-source` and use isolated host ports:
+All scripts set `COMPOSE_PROJECT_NAME=stock-quant-review-assistant` and use isolated host ports:
 
 ```text
 frontend 18080
@@ -22,8 +22,8 @@ redis    16379
 ## Tests
 
 ```bash
-cd backend && python -m pytest
-cd frontend && npm run build
+cd backend && python3 -m pytest
+cd frontend && npm ci && npm run build
 ```
 
 ## Database

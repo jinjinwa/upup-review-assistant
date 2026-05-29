@@ -14,7 +14,7 @@ export default function AuthShell({
   return (
     <div className="auth-page">
       <section className="auth-hero">
-        <p className="eyebrow">Open-core community edition</p>
+        <p className="eyebrow">Stock / Quant community edition</p>
         <h1>{title}</h1>
         <p>{subtitle}</p>
         <div className="auth-demo-accounts">
@@ -26,8 +26,8 @@ export default function AuthShell({
       <section className="auth-card">
         {children}
         <div className="auth-footer">{footer}</div>
-        <a className="product-link" href="mailto:1419995247@qq.com">
-          产品咨询
+        <a className="product-link" href="https://upup.live/register?invite=INV-0E08A" target="_blank" rel="noreferrer">
+          体验部署版
         </a>
       </section>
     </div>

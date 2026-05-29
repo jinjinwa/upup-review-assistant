@@ -8,7 +8,7 @@ from app.api import admin, auth, demo, scoring
 from app.core.exceptions import APIException
 from app.core.response import error_response, success_response
 
-app = FastAPI(title="UPUP Community Edition API", version="0.2.0")
+app = FastAPI(title="Stock Quant Review Assistant API", version="0.2.0")
 
 app.add_middleware(
     CORSMiddleware,

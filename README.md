@@ -1,8 +1,14 @@
-# UPUP Review Assistant Community Edition
+# Stock Quant Review Assistant Community Edition
 
-Runnable open-core community edition for the UPUP A-share review assistant.
+Runnable open-core community edition for stock review and quantitative analysis workflows.
 
 This repository gives developers a complete local product scaffold: React frontend, FastAPI backend, PostgreSQL, Redis, Celery, Alembic, authentication, roles, admin views, demo data workflows, and documentation.
+
+Keywords: stock, quant, quantitative finance, stock analysis, A-share review, 股票复盘, 量化选股.
+
+## Hosted Product Access
+
+Use the invite link to experience the deployed version with hosted permissions: [https://upup.live/register?invite=INV-0E08A](https://upup.live/register?invite=INV-0E08A)
 
 ## Product Preview
 
@@ -10,15 +16,15 @@ These screenshots show the community edition running locally with synthetic demo
 
 ### Community Dashboard
 
-![UPUP community dashboard](docs/assets/screenshots/community-dashboard.png)
+![Stock Quant community dashboard](docs/assets/screenshots/community-dashboard.png)
 
 ### Demo Review
 
-![UPUP demo review](docs/assets/screenshots/community-review.png)
+![Stock Quant demo review](docs/assets/screenshots/community-review.png)
 
 ### Admin Data Governance
 
-![UPUP admin data governance](docs/assets/screenshots/community-admin-data.png)
+![Stock Quant admin data governance](docs/assets/screenshots/community-admin-data.png)
 
 ## Quickstart
 
@@ -56,7 +62,7 @@ demo@example.com / demo123456
 The community edition runs as a standalone Compose project with its own network, volume, and host ports:
 
 ```text
-project:  upup-open-source
+project:  stock-quant-review-assistant
 frontend: http://localhost:18080
 backend:  http://localhost:18000
 postgres: localhost:15432
@@ -67,7 +73,7 @@ Run it independently from any other local services.
 
 ## Business Inquiries
 
-For hosted product or business inquiries, contact 1419995247@qq.com.
+Business contact: 1419995247@qq.com
 
 ## Notice
 
