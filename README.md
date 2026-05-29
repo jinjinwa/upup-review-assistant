@@ -1,12 +1,12 @@
 # UPUP Review Assistant Community Edition
 
-Open-core community scaffold for the UPUP A-share review assistant.
+Runnable open-core community edition for the UPUP A-share review assistant.
 
-This repository is intentionally **not** the full commercial product. It is a runnable architecture scaffold with frontend, backend, PostgreSQL, Redis, Celery, Alembic, authentication, roles, and mock data governance.
+This repository gives developers a complete local product scaffold: React frontend, FastAPI backend, PostgreSQL, Redis, Celery, Alembic, authentication, roles, admin views, demo data workflows, and documentation.
 
 ## Product Preview
 
-These masked screenshots show the hosted product experience. The community edition in this repository keeps the architecture scaffold and removes the commercial strategy logic.
+These masked screenshots show the hosted UPUP product experience. The community edition gives you the runnable foundation behind that direction, with safe demo workflows you can run locally.
 
 ### Review Dashboard
 
@@ -39,20 +39,21 @@ admin@example.com / admin123456
 demo@example.com / demo123456
 ```
 
-## What You Can Run
+## Community Edition Includes
 
 - Register and log in.
 - Use JWT-protected frontend routes.
 - Switch behavior by normal user vs admin role.
 - Create fake review reports.
-- Run a generic toy scorer.
+- Run a generic example scorer.
 - View admin user management with an N+1-safe aggregate query.
 - Trigger a mock data source sync through Celery + Redis.
 - Inspect SQLAlchemy models and Alembic migration.
+- Extend the app shell, API contracts, worker tasks, and database models for your own scenarios.
 
-## Isolation From the Private App
+## Standalone Runtime
 
-The community edition is isolated from the private app. It uses its own Compose project, network, volume, and host ports:
+The community edition runs as a standalone Compose project with its own network, volume, and host ports:
 
 ```text
 project:  upup-open-source
@@ -62,17 +63,7 @@ postgres: localhost:15432
 redis:    localhost:16379
 ```
 
-It must not stop, reuse, or depend on the private app services.
-
-## What Is Removed
-
-- Production stock pool algorithms.
-- Real scoring factors and weights.
-- Backtest logic and portfolio logic.
-- Real market data integrations.
-- Tushare implementation, tokens, field mapping, or sync scripts.
-- Commercial membership, payment, card key, and admin business flows.
-- Production deployment and infrastructure topology.
+Run it independently from any other local services.
 
 ## Commercial Product
 
@@ -96,7 +87,7 @@ All demo data is synthetic. The generic scorer is a technical scaffold, not a pr
 - [Data Governance](docs/data-governance.md)
 - [Task Architecture](docs/task-architecture.md)
 - [Scoring Framework](docs/scoring-framework.md)
-- [Open-Core Boundary](docs/open-core-boundary.md)
+- [Community Scope](docs/community-scope.md)
 - [Demo Data](docs/demo-data.md)
 
 ## License

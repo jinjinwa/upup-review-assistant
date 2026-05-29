@@ -21,7 +21,7 @@ def create_demo_review(db: Session, user: User) -> DemoReport:
         user_id=user.id,
         title=result.title,
         score=result.score,
-        summary="这是一条社区版 fake report，用于展示复盘工作流骨架，不包含真实策略。",
+        summary="这是一条社区版 fake report，用于展示复盘工作流骨架和报告流转体验。",
     )
     db.add(report)
     db.commit()
