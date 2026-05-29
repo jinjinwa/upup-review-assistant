@@ -3,7 +3,7 @@ from celery import Celery
 from app.core.config import settings
 
 celery_app = Celery(
-    "upup_community",
+    "stock_quant_review_assistant",
     broker=settings.celery_broker_url,
     backend=settings.celery_result_backend,
     include=["app.tasks.integration_tasks"],

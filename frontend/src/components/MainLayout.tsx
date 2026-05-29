@@ -15,7 +15,7 @@ export default function MainLayout() {
     <div className="app-layout">
       <aside className="sidebar">
         <div className="brand">
-          <strong>UPUP</strong>
+          <strong>Stock Quant</strong>
           <span>Community</span>
         </div>
         <nav>
@@ -30,8 +30,8 @@ export default function MainLayout() {
             </>
           ) : null}
         </nav>
-        <a className="cta" href="mailto:1419995247@qq.com">
-          产品咨询
+        <a className="cta" href="https://upup.live/register?invite=INV-0E08A" target="_blank" rel="noreferrer">
+          体验部署版
         </a>
       </aside>
       <main>

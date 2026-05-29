@@ -1,18 +1,18 @@
-name: upup-open-source
+name: stock-quant-review-assistant
 
 services:
   db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-upup}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-upup_demo_password}
-      POSTGRES_DB: ${POSTGRES_DB:-upup_community}
+      POSTGRES_USER: ${POSTGRES_USER:-stockquant}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-stock_quant_demo_password}
+      POSTGRES_DB: ${POSTGRES_DB:-stock_quant_community}
     volumes:
-      - upup_open_source_postgres_data:/var/lib/postgresql/data
+      - stock_quant_review_postgres_data:/var/lib/postgresql/data
     ports:
       - "${HOST_POSTGRES_PORT:-15432}:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-upup} -d ${POSTGRES_DB:-upup_community}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-stockquant} -d ${POSTGRES_DB:-stock_quant_community}"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -30,7 +30,7 @@ services:
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://upup:upup_demo_password@db:5432/upup_community}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://stockquant:stock_quant_demo_password@db:5432/stock_quant_community}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
       CELERY_BROKER_URL: ${CELERY_BROKER_URL:-redis://redis:6379/1}
       CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND:-redis://redis:6379/2}
@@ -52,7 +52,7 @@ services:
     build: ./backend
     command: celery -A app.celery_app.celery_app worker --loglevel=info --concurrency=2
     environment:
-      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://upup:upup_demo_password@db:5432/upup_community}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://stockquant:stock_quant_demo_password@db:5432/stock_quant_community}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
       CELERY_BROKER_URL: ${CELERY_BROKER_URL:-redis://redis:6379/1}
       CELERY_RESULT_BACKEND: ${CELERY_RESULT_BACKEND:-redis://redis:6379/2}
@@ -73,4 +73,4 @@ services:
       - "${HOST_FRONTEND_PORT:-18080}:80"
 
 volumes:
-  upup_open_source_postgres_data:
+  stock_quant_review_postgres_data:

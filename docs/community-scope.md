@@ -20,4 +20,6 @@ The community edition is designed as a practical starting point for local develo
 - Extend the admin pages for team operations.
 - Add more worker tasks and reporting screens.
 
-For hosted deployments or business inquiries, contact 1419995247@qq.com.
+Hosted product access: [https://upup.live/register?invite=INV-0E08A](https://upup.live/register?invite=INV-0E08A)
+
+For business inquiries, contact 1419995247@qq.com.

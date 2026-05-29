@@ -1,1 +1,1 @@
-"""UPUP community edition backend."""
+"""Stock Quant Review Assistant community backend."""

@@ -24,7 +24,7 @@ export default function Login() {
 
   return (
     <AuthShell
-      title="UPUP 社区版骨架"
+      title="Stock Quant 社区版骨架"
       subtitle="登录后可体验完整前后端、数据库、任务队列和权限框架。"
       footer={<span>没有账号？ <Link to="/register">注册一个</Link></span>}
     >
