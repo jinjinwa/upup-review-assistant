@@ -5,7 +5,7 @@ from sqlalchemy import desc, func, select
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
-from app.core.exceptions import NotFoundException
+from app.core.exceptions import NotFoundException, ServiceUnavailableException
 from app.core.permissions import require_admin
 from app.core.response import success_response
 from app.models import DataSource, DemoReport, IntegrationRun, User
@@ -84,7 +84,17 @@ def sync_data_source(
     db.add(run)
     db.commit()
     db.refresh(run)
-    run_fake_data_source_sync.delay(run.id)
+    try:
+        run_fake_data_source_sync.delay(run.id)
+    except Exception as exc:
+        run.status = "failed"
+        run.message = "Mock task queue unavailable. Start the worker stack and retry."
+        run.finished_at = datetime.now(timezone.utc)
+        db.commit()
+        raise ServiceUnavailableException(
+            "Task queue unavailable; start Redis and the worker, then retry.",
+            detail={"type": exc.__class__.__name__},
+        ) from exc
     return success_response({"task_id": run.id, "status": run.status}, message="Mock sync queued")
 
 

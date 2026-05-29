@@ -30,8 +30,8 @@ export default function MainLayout() {
             </>
           ) : null}
         </nav>
-        <a className="cta" href="https://upup.live/register?invite=INV-0E08A" target="_blank" rel="noreferrer">
-          完整产品
+        <a className="cta" href="mailto:1419995247@qq.com">
+          产品咨询
         </a>
       </aside>
       <main>

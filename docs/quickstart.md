@@ -1,7 +1,7 @@
 # Quickstart
 
 ```bash
-docker compose up --build
+make start
 ```
 
 Open `http://localhost:18080`.
@@ -12,6 +12,8 @@ Default accounts:
 admin@example.com / admin123456
 demo@example.com / demo123456
 ```
+
+These accounts are for local demos. Change credentials before exposing any deployment.
 
 Useful endpoints:
 

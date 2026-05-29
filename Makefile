@@ -13,9 +13,9 @@ logs:
 	COMPOSE_PROJECT_NAME=upup-open-source docker compose logs -f
 
 backend-test:
-	cd backend && python -m pytest
+	cd backend && python3 -m pytest
 
 frontend-build:
-	cd frontend && npm run build
+	cd frontend && npm ci && npm run build
 
 test: backend-test frontend-build

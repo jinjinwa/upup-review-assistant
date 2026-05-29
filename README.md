@@ -6,24 +6,24 @@ This repository gives developers a complete local product scaffold: React fronte
 
 ## Product Preview
 
-These masked screenshots show the hosted UPUP product experience. The community edition gives you the runnable foundation behind that direction, with safe demo workflows you can run locally.
+These screenshots show the community edition running locally with synthetic demo data.
 
-### Review Dashboard
+### Community Dashboard
 
-![UPUP review dashboard](docs/assets/screenshots/product-dashboard.png)
+![UPUP community dashboard](docs/assets/screenshots/community-dashboard.png)
 
-### Limit-Up Ladder
+### Demo Review
 
-![UPUP limit-up ladder](docs/assets/screenshots/product-ladder.png)
+![UPUP demo review](docs/assets/screenshots/community-review.png)
 
-### Theme Rotation
+### Admin Data Governance
 
-![UPUP theme rotation](docs/assets/screenshots/product-themes.png)
+![UPUP admin data governance](docs/assets/screenshots/community-admin-data.png)
 
 ## Quickstart
 
 ```bash
-docker compose up --build
+make start
 ```
 
 Open:
@@ -65,17 +65,13 @@ redis:    localhost:16379
 
 Run it independently from any other local services.
 
-## Commercial Product
+## Business Inquiries
 
-For the full product, visit [https://upup.live/](https://upup.live/).
-
-Start here: [https://upup.live/register?invite=INV-0E08A](https://upup.live/register?invite=INV-0E08A)
-
-Business contact: 1419995247@qq.com
+For hosted product or business inquiries, contact 1419995247@qq.com.
 
 ## Notice
 
-All demo data is synthetic. The generic scorer is a technical scaffold, not a production investment model. Nothing in this repository constitutes investment advice.
+All demo data is synthetic. The generic scorer is a technical scaffold for local development. Nothing in this repository constitutes investment advice.
 
 ## Documentation
 

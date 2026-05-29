@@ -10,7 +10,7 @@ flowchart LR
   API --> Redis["Redis"]
   Worker["Celery worker"] --> Redis
   Worker --> DB
-  Frontend --> CTA["upup.live"]
+  Frontend --> Views["Community views"]
 ```
 
 ## Docker Compose
@@ -68,4 +68,4 @@ erDiagram
   USERS ||--o{ AUDIT_LOGS : acts
 ```
 
-This is a public scaffold schema, not the commercial schema.
+This is a public demo schema for local development.

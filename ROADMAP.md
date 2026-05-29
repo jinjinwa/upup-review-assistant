@@ -8,6 +8,7 @@
 - Improve API examples and OpenAPI documentation.
 - Add more N+1-safe query examples.
 
-## Commercial Product
+## Community Polish
 
-The commercial product roadmap is separate. Visit [https://upup.live/](https://upup.live/) for product access.
+- Add more local-first examples.
+- Improve setup diagnostics.

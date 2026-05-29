@@ -19,7 +19,7 @@ export default function AdminUsers() {
 
   return (
     <div className="page-shell">
-      <PageHeader title="管理员 · 用户管理" description="公开的是 RBAC 和 N+1 避免方式，不公开商业权限体系。" />
+      <PageHeader title="管理员 · 用户管理" description="展示 RBAC 用户列表和 N+1 避免方式，可扩展更多权限场景。" />
       <Card>
         <p>{note}</p>
         <table>

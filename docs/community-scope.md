@@ -20,4 +20,4 @@ The community edition is designed as a practical starting point for local develo
 - Extend the admin pages for team operations.
 - Add more worker tasks and reporting screens.
 
-For the hosted UPUP product experience, visit [https://upup.live/](https://upup.live/).
+For hosted deployments or business inquiries, contact 1419995247@qq.com.

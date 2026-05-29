@@ -38,4 +38,4 @@ alembic upgrade head
 
 The Docker backend entrypoint runs migrations and then `init_db.py`.
 
-This repository intentionally does not ship a data-wiping helper. Stop services with `docker compose down`; remove volumes only if you explicitly understand the local data impact.
+Stop the community stack with `make stop`. Volume cleanup stays manual so local data changes are always explicit.

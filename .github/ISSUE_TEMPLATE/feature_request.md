@@ -8,6 +8,6 @@ assignees: ""
 
 ## Proposal
 
-## Open-Core Scope Check
+## Community Fit
 
-Confirm this uses synthetic data only and does not expose commercial strategy logic.
+Describe how this improves the local community workflow.
