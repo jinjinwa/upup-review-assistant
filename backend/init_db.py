@@ -47,13 +47,13 @@ def seed_reports(db, user: User) -> None:
                 user_id=user.id,
                 title="社区版启动报告",
                 score=76,
-                summary="Fake report showing a complete user workflow without core strategy logic.",
+                summary="Synthetic report showing the complete community workflow.",
             ),
             DemoReport(
                 user_id=user.id,
                 title="通用评分器示例",
                 score=82,
-                summary="Generic score produced from demo dimensions, not a production stock algorithm.",
+                summary="Generic score produced from demo dimensions for local development.",
             ),
         ]
     )

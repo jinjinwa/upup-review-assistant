@@ -6,4 +6,4 @@ The admin area includes mock data source governance:
 - queue a mock sync;
 - inspect task status.
 
-No real external data is fetched. The mock worker only updates community database rows so contributors can understand the architecture.
+The mock worker updates community database rows with synthetic task results so contributors can understand the architecture.

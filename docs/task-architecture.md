@@ -1,6 +1,6 @@
 # Task Architecture
 
-Celery and Redis are included so the community edition has the same architectural shape as a production async system.
+Celery and Redis are included so the community edition can demonstrate asynchronous task processing.
 
 ```mermaid
 flowchart LR
@@ -10,4 +10,4 @@ flowchart LR
   Worker --> DB["PostgreSQL status update"]
 ```
 
-The task name is `community.fake_data_source_sync`. It is a mock task and does not contain production queue names or scheduling logic.
+The task name is `community.fake_data_source_sync`. It is a mock task for local task-flow demos.

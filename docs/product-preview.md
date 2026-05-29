@@ -1,17 +1,17 @@
 # Product Preview
 
-These screenshots are masked product previews from the hosted UPUP experience. They are included so community users can understand the direction of the full product UI.
+These screenshots show the community edition running locally with synthetic demo data.
 
 The community edition focuses on a runnable local scaffold: app shell, API contracts, authentication, admin workflows, task processing, and synthetic demo data.
 
-## Review Dashboard
+## Community Dashboard
 
-![UPUP review dashboard](assets/screenshots/product-dashboard.png)
+![UPUP community dashboard](assets/screenshots/community-dashboard.png)
 
-## Limit-Up Ladder
+## Demo Review
 
-![UPUP limit-up ladder](assets/screenshots/product-ladder.png)
+![UPUP demo review](assets/screenshots/community-review.png)
 
-## Theme Rotation
+## Admin Data Governance
 
-![UPUP theme rotation](assets/screenshots/product-themes.png)
+![UPUP admin data governance](assets/screenshots/community-admin-data.png)

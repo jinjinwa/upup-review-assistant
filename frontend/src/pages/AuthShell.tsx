@@ -26,8 +26,8 @@ export default function AuthShell({
       <section className="auth-card">
         {children}
         <div className="auth-footer">{footer}</div>
-        <a className="product-link" href="https://upup.live/register?invite=INV-0E08A" target="_blank" rel="noreferrer">
-          访问完整产品
+        <a className="product-link" href="mailto:1419995247@qq.com">
+          产品咨询
         </a>
       </section>
     </div>

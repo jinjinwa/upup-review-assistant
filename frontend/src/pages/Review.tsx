@@ -18,7 +18,7 @@ export default function Review() {
     <div className="page-shell">
       <PageHeader
         title="Demo 复盘"
-        description="保留业务工作流壳子，核心策略和真实评分因子已经裁剪。"
+        description="展示通用评分、报告写入和前后端联动的本地演示流程。"
         actions={<Button onClick={run}>运行 fake 复盘</Button>}
       />
       <div className="two-column">

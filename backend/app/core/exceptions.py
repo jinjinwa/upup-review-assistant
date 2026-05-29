@@ -29,3 +29,7 @@ class ConflictException(APIException):
 
 class InternalServerException(APIException):
     status_code = 500
+
+
+class ServiceUnavailableException(APIException):
+    status_code = 503

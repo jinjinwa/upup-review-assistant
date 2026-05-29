@@ -29,7 +29,7 @@ def run_fake_data_source_sync(run_id: int) -> dict:
             source.last_sync_at = datetime.now(timezone.utc)
         run.status = "success"
         run.finished_at = datetime.now(timezone.utc)
-        run.message = "Mock sync completed. No real external data was fetched."
+        run.message = "Mock sync completed with synthetic task results."
         db.commit()
         return {"status": "success", "run_id": run_id}
     finally:
