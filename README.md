@@ -4,6 +4,22 @@ Open-core community scaffold for the UPUP A-share review assistant.
 
 This repository is intentionally **not** the full commercial product. It is a runnable architecture scaffold with frontend, backend, PostgreSQL, Redis, Celery, Alembic, authentication, roles, and mock data governance.
 
+## Product Preview
+
+These masked screenshots show the hosted product experience. The community edition in this repository keeps the architecture scaffold and removes the commercial strategy logic.
+
+### Review Dashboard
+
+![UPUP review dashboard](docs/assets/screenshots/product-dashboard.png)
+
+### Limit-Up Ladder
+
+![UPUP limit-up ladder](docs/assets/screenshots/product-ladder.png)
+
+### Theme Rotation
+
+![UPUP theme rotation](docs/assets/screenshots/product-themes.png)
+
 ## Quickstart
 
 ```bash
@@ -73,6 +89,7 @@ All demo data is synthetic. The generic scorer is a technical scaffold, not a pr
 ## Documentation
 
 - [Quickstart](docs/quickstart.md)
+- [Product Preview](docs/product-preview.md)
 - [Development Guide](docs/development.md)
 - [Architecture](docs/architecture.md)
 - [Auth and Roles](docs/auth-and-roles.md)
